@@ -1,0 +1,1 @@
+This repository includes Javascript code to implement a conjoint survey experiment in Qualtrics, based on https://github.com/leeper/conjoint-example and https://www.weebly.com/uploads/1/2/0/9/12094568/conjoint.pdf. 
