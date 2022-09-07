@@ -147,20 +147,22 @@ b_list[redflag_index] = redflag_b;
 b_list[taxes_index] = taxes_b;
 b_list[legit_index] = legit_b;
 
-att_list = ["att1", "att2", "att3", "att4", "att5", "att9", "att10", "att11", "att12"];
-a_out = ["a1","a2","a3","a4","a5", "a9", "a10", "a11", "a12"];
-b_out = ["b1","b2","b3","b4","b5", "b9", "b10", "b11", "b12"];
+// set embedded data for order and specific traits displayed
+Qualtrics.SurveyEngine.setEmbeddedData("order1", attributes2.join("|"));
+Qualtrics.SurveyEngine.setEmbeddedData("traits1a", a_list.join("|"));	
+Qualtrics.SurveyEngine.setEmbeddedData("traits1b", b_list.join("|"));
+	
+const att_list = ["att1", "att2", "att3", "att4", "att5", "att9", "att10", "att11", "att12"];
+const a_out = ["a1","a2","a3","a4","a5", "a9", "a10", "a11", "a12"];
+const b_out = ["b1","b2","b3","b4","b5", "b9", "b10", "b11", "b12"];
 
-// set html values in conjoint table--this outputs proper results
+// set html values in conjoint table
 for(i=0;i<12;i++){
   document.getElementById(att_list[i]).innerHTML = attributes2[i];
   document.getElementById(a_out[i]).innerHTML = a_list[i];
   document.getElementById(b_out[i]).innerHTML = b_list[i];
 }
 
-// set embedded data for order and specific traits displayed--this doesn't work
-Qualtrics.SurveyEngine.setEmbeddedData("order1", attributes2.join("|"));
-Qualtrics.SurveyEngine.setEmbeddedData("traits1a", a_list.join("|"));	
-Qualtrics.SurveyEngine.setEmbeddedData("traits1b", b_list.join("|"));
+
 
 });
